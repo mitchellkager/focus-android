@@ -367,6 +367,7 @@ public class ScreenGrabTest {
         Assert.assertTrue(imageMenuTitle.exists());
         Screengrab.screenshot("Image_Context_Menu");
         TestHelper.mDevice.pressBack();
+        browserURLbar.waitForExists(waitingTime);
         browserURLbar.click();
 
         /* Go to google play market */
@@ -376,15 +377,20 @@ public class ScreenGrabTest {
 
         UiObject cancelBtn = mDevice.findObject(new UiSelector()
                 .resourceId("android:id/button2"));
+        UiObject alert = mDevice.findObject(new UiSelector()
+                .resourceId("android:id/alertTitle"));
 
+        alert.waitForExists(waitingTime);
         cancelBtn.waitForExists(waitingTime);
         Screengrab.screenshot("Redirect_Outside");
         cancelBtn.click();
+        inlineAutocompleteEditText.waitForExists(waitingTime);
+        mDevice.pressBack();
+        urlBar.waitForExists(waitingTime);
+        urlBar.click();
         UiObject tryAgainBtn = mDevice.findObject(new UiSelector()
                 .resourceId("errorTryAgain")
                 .clickable(true));
-        mDevice.pressBack();
-        urlBar.click();
         for (ScreenGrabTest.ErrorTypes error: ScreenGrabTest.ErrorTypes.values()) {
 
             inlineAutocompleteEditText.waitForExists(waitingTime);

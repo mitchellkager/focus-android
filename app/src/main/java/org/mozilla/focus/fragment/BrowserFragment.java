@@ -810,6 +810,14 @@ public class BrowserFragment extends WebFragment implements View.OnClickListener
                 break;
             }
 
+            case R.id.find_in_page: {
+                final FindInPageFragment fragment = FindInPageFragment.newInstance();
+                fragment.show(getFragmentManager(), FindInPageFragment.FRAGMENT_TAG);
+
+                // TelemetryWrapper.openFindInPageEvent();
+                break;
+            }
+
             case R.id.customtab_close: {
                 erase();
                 getActivity().finish();

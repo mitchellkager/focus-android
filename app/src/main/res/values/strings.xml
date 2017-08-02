@@ -33,6 +33,10 @@
       a screen with multiple browsers (or other apps that can open the current URL) to choose from. -->
     <string name="menu_open_with_a_browser">Open with…</string>
 
+    <!-- Menu item: Open a fragment which will allow the user to locate a string within the current
+      tab's loaded webpage -->
+    <string name="menu_find_in_page">Find in page</string>
+
     <!-- Menu item: Add the current page as a shortcut to the device's home screen (launcher). -->
     <string name="menu_add_to_home_screen">Add to Home screen</string>
 
